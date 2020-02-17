@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<script>
+  var wins = 0;
+  var losses = 0;
+  var ties = 0;
+  function display() {
+    console.log("Wins: " + wins + " Losses: " + losses + " Ties: " +ties);
+  }
+  function game() {
+
+  var computer;
+  var human;
+  var i;
+  var result;
+
+  function analyzePick() {
+    switch(i) {
+     case 1:
+      i = "Rock";
+      break;
+     case 2:
+       i = "Paper";
+       break;
+     case 3:
+       i = "Scissors";
+       break;
+     default: 
+      console.log("Shit's broke, yo")
+     }
+  }
+  function computerPlay() {
+    i = Math.floor(Math.random()*3+1);
+  /*  console.log(i); Test Random Output Digit */
+    analyzePick();
+    computer = i;
+    i = 0;
+  }
+  function humanPlay() {
+    human = prompt("Rock, Paper, or Scissors?");
+  }
+  function comparison() {
+    if (human == computer) {
+      result = "It's a tie.";
+    }
+    else if (human == "Rock" && computer == "Paper") {
+      result = "You Lose.";
+    }
+    else if (human == "Paper" && computer == "Scissors") {
+      result = "You Lose.";
+    }
+    else if (human == "Scissors" && computer == "Rock") {
+      result = "You Lose.";
+    }
+    else if (human == "Paper" && computer == "Rock") {
+      result = "You Win!";
+    }
+    else if (human == "Rock" && computer == "Scissors") {
+      result = "You Win!";
+    }
+    else if (human == "Scissors" && computer == "Paper") {
+      result = "You Win!";
+    }
+  }
+  computerPlay();
+  humanPlay();
+  comparison();
+  console.log("Computer: " + computer + " ||| Human: " + human );
+  console.log(result);
+  if (result == "You Lose.") {
+    losses++;
+  }
+    else if (result == "You Win!") {
+      wins++;
+    } 
+    else if (result == "It's a tie.") {
+      ties++;
+    }
+    else {}
+}
+
+game();
+display();
+game();
+display();
+</script>
+  
